@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hi-Tech Stores Case Study – Hitesh Reddy Butti</title>
+<meta name="description" content="Inventory and job-costing software built by Hitesh Reddy Butti for Hi-Tech Projects, a Bengaluru aerospace and defence composites manufacturer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Archivo:wght@600;700;800&display=swap">
+<style>
+:root{--bg:#f6f7f5;--surface:#fff;--fg:#1b2024;--muted:#5b646b;--line:#d9ddd8;--accent:#c2541b;--accent-soft:#f6e3d8;--ink2:#2f3a42;
+--display:"Archivo","Helvetica Neue",Arial,sans-serif;--body:"IBM Plex Sans","Segoe UI",Roboto,Arial,sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace}
+@media (prefers-color-scheme: dark){:root{--bg:#14181b;--surface:#1c2226;--fg:#e6e9e7;--muted:#9aa3a9;--line:#2f373d;--accent:#ec7a3f;--accent-soft:#3a2418;--ink2:#c9d0d4}}
+@media print{:root{--bg:#fff;--surface:#fff;--fg:#1b2024;--muted:#5b646b;--line:#d9ddd8;--accent:#c2541b;--accent-soft:#f6e3d8;--ink2:#2f3a42}.wrap{padding-block:0!important;gap:14px!important}body{font-size:12.5px!important;line-height:1.45!important}h1{font-size:26px!important}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6}
+.wrap{max-width:760px;margin:0 auto;padding:48px 16px 64px;display:flex;flex-direction:column;gap:40px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(2rem,6vw,2.8rem);line-height:1.05;margin:8px 0 12px;letter-spacing:-.01em}
+h2{font-family:var(--display);font-weight:700;font-size:1.3rem;margin:0 0 10px}
+p{margin:0 0 10px;max-width:65ch}
+.lede{font-size:1.1rem;color:var(--ink2)} .by{color:var(--muted);font-size:.95rem}
+.spec{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));border-top:2px solid var(--fg);border-bottom:1px solid var(--line);margin:0}
+.spec div{padding:12px 14px 12px 0} .spec dt{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)} .spec dd{margin:4px 0 0;font-weight:500}
+.flow{display:flex;flex-wrap:wrap}
+.step{flex:1 1 150px;background:var(--surface);border:1px solid var(--line);padding:14px}
+.step+.step{border-left:none}
+.step b{display:block;font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.06em;margin-bottom:4px}
+.step.end{background:var(--accent-soft);border-color:var(--accent)}
+@media (max-width:620px){.flow{flex-direction:column}.step+.step{border-left:1px solid var(--line);border-top:none}}
+.caption{font-size:.85rem;color:var(--muted);margin-top:8px}
+ul.feat{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+ul.feat li{padding-left:18px;position:relative;max-width:65ch}
+ul.feat li::before{content:"";position:absolute;left:0;top:.7em;width:8px;height:2px;background:var(--accent)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.tags span{font-family:var(--mono);font-size:12.5px;border:1px solid var(--line);padding:3px 8px;border-radius:3px;color:var(--ink2)}
+.contact{border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:.95rem} .contact strong{color:var(--fg)}
+a{color:var(--accent)}
+.formula{font-family:var(--mono);font-size:.9rem;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);padding:10px 12px;max-width:none}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header>
+    <div class="eyebrow">Project case study · Hitesh Reddy Butti</div>
+    <h1>Hi-Tech Stores: inventory and job-costing software for a composites factory</h1>
+    <p class="lede">Stores-room software I built for Hi-Tech Projects, a Bengaluru aerospace and defence composites manufacturer, so that every kilogram or square metre of material used is charged to a project and management can see what each job really cost.</p>
+    <p class="by">Built alongside my role as Business Coordinator at Hi-Tech Projects (Feb 2025 – present).</p>
+  </header>
+  <dl class="spec">
+    <div><dt>Client</dt><dd>Hi-Tech Projects, Bengaluru</dd></div>
+    <div><dt>Users</dt><dd>Production, stores and management staff</dd></div>
+    <div><dt>Stack</dt><dd>Node.js · MySQL / SQLite</dd></div>
+    <div><dt>Releases</dt><dd>32, driven by staff feedback</dd></div>
+  </dl>
+  <section>
+    <h2>The setting</h2>
+    <p>Hi-Tech Projects makes composite hardware for radar, launch vehicles and spacecraft: radomes, rocket-motor nozzles and structures for ISRO, DRDO, HAL, BEL and BHEL. Jobs run on specialised raw materials, so knowing what each job consumed matters for costing, and materials with a shelf life have to be watched before they go bad.</p>
+  </section>
+  <section>
+    <h2>How material moves through the system</h2>
+    <div class="flow">
+      <div class="step"><b>STEP 1</b>Production raises a material request against a project</div>
+      <div class="step"><b>STEP 2</b>Stores issues material against that request</div>
+      <div class="step"><b>STEP 3</b>Unused material is returned and logged</div>
+      <div class="step end"><b>RESULT</b>Net usage is charged to the project, giving its real material cost</div>
+    </div>
+    <p class="caption">Every issue and return is tied to a request, so material cost per job comes out of daily stores work instead of a separate costing exercise.</p>
+  </section>
+  <section>
+    <h2>What it does</h2>
+    <ul class="feat">
+      <li><strong>Job costing:</strong> every kilogram or square metre issued and returned is charged to a project, so management sees what each job really cost.</li>
+      <li><strong>Batch, expiry and QC tracking:</strong> stock is tracked by batch with its QC status, and the system raises alerts before material expires.</li>
+      <li><strong>Role-based logins:</strong> staff sign in with role-based access across the office PCs.</li>
+      <li><strong>Nightly backups:</strong> data is backed up every night and can be restored in one click.</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Tailored to how Hi-Tech works</h2>
+    <ul class="feat">
+      <li><strong>Each material in its own unit:</strong> prepregs, fabrics and film adhesives are bought and issued by the square metre (SQM), resins by the kilogram, consumables by count. Stock, requests, returns and job costs are all kept in the unit the shop floor actually measures, so nobody converts on paper.</li>
+      <li><strong>Customer free-issue material kept separate:</strong> defence and space customers often supply their own fabric. That material is received as free issue, held in its own store, never mixed with company stock, and a reconciliation screen shows what came in and what still has to go back.</li>
+      <li><strong>QC gate on every issue:</strong> a batch that is awaiting inspection, on hold or rejected cannot be issued to production, and an expired batch is blocked. The override switches can only be set by the service on the stores PC, never by a screen.</li>
+      <li><strong>First-expiry, first-out:</strong> when stores picks a lot, the batch that expires soonest is offered first, so shelf-life material is used before it goes bad.</li>
+      <li><strong>Expiry has three states, not two:</strong> a real date, "no expiry", and "not recorded", so a missing date is flagged instead of silently treated as safe.</li>
+    </ul>
+  </section>
+  <section>
+    <h2>The arithmetic and the traceability</h2>
+    <p>No screen ever writes a stock figure. Every receipt, issue, transfer, return and scrap is an entry in a ledger, and stock is worked out by adding those entries up for each combination of material, batch (lot), owner and shelf location:</p>
+    <p class="formula">stock(material, lot, owner, location) = Σ in (opening, receipts, free-issue receipts, transfers in, returns, adjustments) − Σ out (issues, transfers out, scrap, adjustments)</p>
+    <p>That is what makes any kilogram or square metre traceable: from a job, back to the request, the issue, the lot, its QC status and the supplier and GRN it came in on.</p>
+    <ul class="feat">
+      <li><strong>Returns must balance to the last decimal:</strong> when material comes back, what did not return is treated as used (used = issued − returned), and the storekeeper has to split it across the projects on the bin card. The split must add up to the used quantity within 0.0001, or the entry is refused, because a kilogram charged to no job quietly disappears from every project's cost.</li>
+      <li><strong>Job cost from the best price available:</strong> each line is valued at the rate on the entry if there is one, otherwise that batch's rate, otherwise the material's standing rate. Lines with no price are counted and shown, not hidden as zero.</li>
+      <li><strong>Checked twice:</strong> the same rules file runs in the browser (for an instant answer) and on the stores PC at the moment of writing (the answer that counts), so two people looking at "100 KG" cannot both issue 60.</li>
+      <li><strong>Guarding against bad input:</strong> quantities must be real numbers written in figures (not hex, exponents or a stray "true"), and an entry of over a million units is refused as a likely slipped decimal.</li>
+      <li><strong>Tested independently:</strong> 39 automated test files, including one that recomputes the report totals from the raw entries with separate arithmetic, plus tests for power cuts, multiple users, restore and a second PC.</li>
+    </ul>
+  </section>
+  <section>
+    <h2>How it was built</h2>
+    <p>I built it myself with AI-assisted development on Node.js, with MySQL and SQLite for storage. It follows the way production and stores staff already work, and I have improved it over 32 releases based on their feedback.</p>
+  </section>
+  <section>
+    <h2>What this shows</h2>
+    <p>I can sit with a team, understand how their work actually flows, turn that into working software, and keep improving it after go-live from user feedback. That is the same loop as implementation, presales and customer-success work on business software, done end to end in a real manufacturing setting.</p>
+    <div class="tags"><span>Process mapping</span><span>Inventory &amp; job costing</span><span>Batch / expiry / QC</span><span>Improving from user feedback</span><span>Node.js</span><span>MySQL / SQLite</span></div>
+  </section>
+  <footer class="contact">
+    <p><strong>Hitesh Reddy Butti</strong> · Business Coordinator, Hi-Tech Projects · Bengaluru</p>
+    <p>Email: hiteshbutti11@gmail.com · LinkedIn: <a href="https://www.linkedin.com/in/hitesh-reddy-butti-663364250">linkedin.com/in/hitesh-reddy-butti-663364250</a></p>
+  </footer>
+</main>
+</body>
+</html>
